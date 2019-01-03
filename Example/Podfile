@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'NEImage_Example' do
+  pod 'NEImage', :path => '../'
+
+  target 'NEImage_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

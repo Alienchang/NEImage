@@ -1,0 +1,6 @@
+framework module APNGImageSerialization {
+  umbrella header "APNGImageSerialization-umbrella.h"
+
+  export *
+  module * { export * }
+}

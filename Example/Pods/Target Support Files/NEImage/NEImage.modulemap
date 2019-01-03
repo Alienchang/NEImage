@@ -1,0 +1,6 @@
+framework module NEImage {
+  umbrella header "NEImage-umbrella.h"
+
+  export *
+  module * { export * }
+}
