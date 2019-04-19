@@ -7,10 +7,9 @@
 
 #import "UIImage+NEAnimated.h"
 #import <objc/runtime.h>
-
+#import <SDWebImage/UIImage+MultiFormat.h>
 #import <SDWebImage/UIImage+GIF.h>
 #import <SDWebImage/UIImage+WebP.h>
-#import <SDWebImage/UIImage+MultiFormat.h>
 #import <APNGImageSerialization/APNGImageSerialization.h>
 
 @implementation UIImage (NEAnimated)
@@ -60,7 +59,7 @@ NSString *const kImageExtType = @"imageExtType";
 }
 
 + (UIImage *)ne_animatedImageNamed:(NSString *)name type:(NEImageExtType)extType {
-
+    
     name = [name stringByDeletingPathExtension];
     NSString *ext = nil;
     switch (extType) {
@@ -101,7 +100,7 @@ NSString *const kImageExtType = @"imageExtType";
                 return image;
             }
         }
-        break;
+            break;
         case NEImageExtTypeAPNG:
         {
             ext = @"apng";
@@ -110,7 +109,7 @@ NSString *const kImageExtType = @"imageExtType";
             [image setImageExtType:extType];
             return image;
         }
-        break;
+            break;
         case NEImageExtTypePNG:
         {
             ext = @"png";
@@ -119,7 +118,7 @@ NSString *const kImageExtType = @"imageExtType";
             [image setImageExtType:extType];
             return image;
         }
-        break;
+            break;
         case NEImageExtTypeWebP:
         {
             ext = @"webp";
@@ -133,7 +132,7 @@ NSString *const kImageExtType = @"imageExtType";
         {
             return nil;
         }
-        break;
+            break;
     }
 }
 
@@ -148,7 +147,7 @@ NSString *const kImageExtType = @"imageExtType";
 }
 
 + (UIImage *)ne_animatedGIFData:(NSData *)data {
-    return [UIImage sd_animatedGIFWithData:data];
+    return [UIImage sd_imageWithData:data];
 }
 + (UIImage *)ne_animatedAPNGData:(NSData *)data {
     return [UIImage apng_animatedImageWithAPNGData:data];

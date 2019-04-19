@@ -18,6 +18,14 @@
 @end
 
 @implementation NEImageView
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self){
+        [self setAnimationRepeatCount:1];
+    }
+    return self;
+}
+
 - (void)ne_setImageWithURL:(NSString *_Nullable)url
                placeholder:(UIImage *_Nullable)placeholder
                     circle:(BOOL)circle {
@@ -140,6 +148,13 @@
             UIImage *animationImage = nil;
             if (!image.images) {
                 animationImage = [UIImage ne_animatedGIFData:imageData];
+                if (!animationImage.images) {
+                    // 如果images 还为空，那就是普通图片不是动图
+                    dispatch_main_async_safe(^{
+                        [super setImage:image];
+                    });
+                    return;
+                }
             } else {
                 animationImage = image;
             }
@@ -149,7 +164,11 @@
             }
             
             dispatch_main_async_safe(^{
-                CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"contents"];
+                // 如果重复次数为0，则无限循环（实际上是最大 max int 次数）
+                if (!self.animationRepeatCount) {
+                    self.animationRepeatCount = NSIntegerMax;
+                }
+                CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:NSStringFromSelector(@selector(contents))];
                 animation.calculationMode = kCAAnimationDiscrete;
                 if (!self.animationDuration) {
                     // 默认给0.1秒每帧，不麻烦算了
@@ -174,6 +193,8 @@
         [self setImageWithImageData:nil
                               image:image
                         imageFormat:SDImageFormatUndefined];
+    } else {
+        [super setImage:image];
     }
 }
 
