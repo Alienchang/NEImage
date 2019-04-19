@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://bitbucket.org/Mingde-Piao/neimage'
+  s.homepage         = 'https://github.com/Alienchang/NEImage'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '1217493217@qq.com' => 'chang.liu.meme@funpuls.com' }
-  s.source           = { :git => 'https://bitbucket.org/Mingde-Piao/neimage.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/Alienchang/NEImage.git', :tag => s.version.to_s }
    s.social_media_url = 'https://www.jianshu.com/u/b1b964b19576'
 
   s.ios.deployment_target = '9.0'
