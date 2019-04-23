@@ -16,10 +16,20 @@
                   forState:(UIControlState)state
           placeholderImage:(UIImage *)placeholder;
 
+- (void)ne_setImageWithURL:(NSString *)url
+                  forState:(UIControlState)state
+          placeholderImage:(UIImage *)placeholder
+              didShowImage:(void(^)(UIImage *image))didShowImage;
+
 - (void)ne_setBackgroundImageWithURL:(NSString *)url
                             forState:(UIControlState)state;
 
 - (void)ne_setBackgroundImageWithURL:(NSString *)url
                             forState:(UIControlState)state
                     placeholderImage:(UIImage *)placeholder;
+
+- (void)ne_setBackgroundImageWithURL:(NSString *)url
+                            forState:(UIControlState)state
+                    placeholderImage:(UIImage *)placeholder
+                        didShowImage:(void(^)(UIImage *image))didShowImage;
 @end

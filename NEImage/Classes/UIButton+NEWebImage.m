@@ -15,6 +15,12 @@
     [self ne_setImageWithURL:url forState:state placeholderImage:nil];
 }
 - (void)ne_setImageWithURL:(NSString *)url forState:(UIControlState)state placeholderImage:(UIImage *)placeholder {
+    [self ne_setImageWithURL:url forState:state placeholderImage:placeholder didShowImage:nil];
+}
+- (void)ne_setImageWithURL:(NSString *)url
+                  forState:(UIControlState)state
+          placeholderImage:(UIImage *)placeholder
+              didShowImage:(void(^)(UIImage *image))didShowImage {
     __weak typeof(self)weakSelf = self;
     [self ne_internalSetImageWithURL:url
                     placeholderImage:placeholder
@@ -24,7 +30,10 @@
                         operationKey:nil
                        setImageBlock:^(UIImage * _Nullable image, NSData * _Nullable imageData) {
                            [weakSelf setImage:image forState:state];
-    } progress:nil completed:nil];
+                           if (didShowImage) {
+                               didShowImage(image);
+                           }
+                       } progress:nil completed:nil];
 }
 
 - (void)ne_setBackgroundImageWithURL:(NSString *)url forState:(UIControlState)state {
@@ -32,6 +41,14 @@
 }
 
 - (void)ne_setBackgroundImageWithURL:(NSString *)url forState:(UIControlState)state placeholderImage:(UIImage *)placeholder {
+    [self ne_setBackgroundImageWithURL:url forState:state placeholderImage:placeholder didShowImage:nil];
+    
+}
+
+- (void)ne_setBackgroundImageWithURL:(NSString *)url
+                            forState:(UIControlState)state
+                    placeholderImage:(UIImage *)placeholder
+                        didShowImage:(void(^)(UIImage *image))didShowImage {
     __weak typeof(self)weakSelf = self;
     [self ne_internalSetImageWithURL:url
                     placeholderImage:placeholder
@@ -40,7 +57,10 @@
                              options:NEWebImageRetryFailed
                         operationKey:nil
                        setImageBlock:^(UIImage * _Nullable image, NSData * _Nullable imageData) {
-        [weakSelf setBackgroundImage:image forState:state];
-    } progress:nil completed:nil];
+                           [weakSelf setBackgroundImage:image forState:state];
+                           if (didShowImage) {
+                               didShowImage(image);
+                           }
+                       } progress:nil completed:nil];
 }
 @end
