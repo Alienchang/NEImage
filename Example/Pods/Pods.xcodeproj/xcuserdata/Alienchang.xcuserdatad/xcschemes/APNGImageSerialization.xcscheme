@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EFD892B3350292275B9763B1165D0EA1"
+               BlueprintIdentifier = "CF742822E6087D75C23EAB82FD4FDD49"
+               BuildableName = "APNGImageSerialization.framework"
                BlueprintName = "APNGImageSerialization"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "APNGImageSerialization.framework">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

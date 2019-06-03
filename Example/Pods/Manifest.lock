@@ -1,53 +1,59 @@
 PODS:
   - APNGImageSerialization (0.1.3)
-  - libwebp (0.6.1):
-    - libwebp/core (= 0.6.1)
-    - libwebp/dec (= 0.6.1)
-    - libwebp/demux (= 0.6.1)
-    - libwebp/dsp (= 0.6.1)
-    - libwebp/enc (= 0.6.1)
-    - libwebp/mux (= 0.6.1)
-    - libwebp/utils (= 0.6.1)
-    - libwebp/webp (= 0.6.1)
-  - libwebp/core (0.6.1):
+  - libwebp (1.0.2):
+    - libwebp/core (= 1.0.2)
+    - libwebp/dec (= 1.0.2)
+    - libwebp/demux (= 1.0.2)
+    - libwebp/dsp (= 1.0.2)
+    - libwebp/enc (= 1.0.2)
+    - libwebp/mux (= 1.0.2)
+    - libwebp/utils (= 1.0.2)
+    - libwebp/webp (= 1.0.2)
+  - libwebp/core (1.0.2):
     - libwebp/webp
-  - libwebp/dec (0.6.1):
+  - libwebp/dec (1.0.2):
     - libwebp/core
-  - libwebp/demux (0.6.1):
+  - libwebp/demux (1.0.2):
     - libwebp/core
-  - libwebp/dsp (0.6.1):
+  - libwebp/dsp (1.0.2):
     - libwebp/core
-  - libwebp/enc (0.6.1):
+  - libwebp/enc (1.0.2):
     - libwebp/core
-  - libwebp/mux (0.6.1):
+  - libwebp/mux (1.0.2):
     - libwebp/core
-  - libwebp/utils (0.6.1):
+  - libwebp/utils (1.0.2):
     - libwebp/core
-  - libwebp/webp (0.6.1)
+  - libwebp/webp (1.0.2)
   - NEImage (1.0.0):
     - APNGImageSerialization (~> 0.1.3)
     - SDWebImage
     - SDWebImage/WebP
-  - SDWebImage (4.4.3):
-    - SDWebImage/Core (= 4.4.3)
-  - SDWebImage/Core (4.4.3)
-  - SDWebImage/WebP (4.4.3):
-    - libwebp (~> 0.5)
+  - SDWebImage (4.4.6):
+    - SDWebImage/Core (= 4.4.6)
+  - SDWebImage/Core (4.4.6)
+  - SDWebImage/WebP (4.4.6):
+    - libwebp (>= 0.5)
     - SDWebImage/Core
 
 DEPENDENCIES:
   - NEImage (from `../`)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - APNGImageSerialization
+    - libwebp
+    - SDWebImage
+
 EXTERNAL SOURCES:
   NEImage:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   APNGImageSerialization: 8a3d120d08e84382456c858653beb94b7b499fc9
-  libwebp: 0f01098c6c17175391af621b2f14150f3ca16e16
-  NEImage: 90db0e55fdd32f1bd97943c5473a6fcfc30016b3
-  SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
+  libwebp: b068a3bd7c45f7460f6715be7bed1a18fd5d6b48
+  NEImage: 32bb23c860a8b86105728014b85ff3aad5872b70
+  SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
 
 PODFILE CHECKSUM: c3f0918ac71e9114ac8fc6b54d0a483d239ce53e
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.6.1

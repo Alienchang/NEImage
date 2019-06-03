@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F6F494983B62150DB3F6F2BD54790DB9"
+               BlueprintIdentifier = "AD2AC70A00BDAB87910E8A65292EFEB1"
+               BuildableName = "NEImage"
                BlueprintName = "NEImage"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "NEImage.framework">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
