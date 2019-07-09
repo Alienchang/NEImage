@@ -30,7 +30,7 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '9.0'
 
-  s.source_files = 'NEImage/*.{h,m,mm}'
+  s.source_files = 'NEImage/Classes/*.{h,m,mm}'
   # s.resource_bundles = {
   #   'NEImage' => ['NEImage/Assets/*.png']
   # }
