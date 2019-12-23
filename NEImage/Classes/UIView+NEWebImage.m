@@ -54,7 +54,7 @@ static char FORMATED_URL;
             webImageManager = [[NEWebImageManager alloc] initWithCache:[[SDImageCache alloc] initWithNamespace:cacheURL] downloader:[SDWebImageDownloader sharedDownloader]];
         }
         
-//        [webImageManager setSizeFormatedURL:self.sizeFormatedURL];
+        [webImageManager setSizeFormatedURL:self.sizeFormatedURL];
         
         id <SDWebImageOperation> operation = [webImageManager ne_loadImageWithURL:url options:options imageType:imageType progress:progressBlock completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
             __strong __typeof (wself) sself = wself;

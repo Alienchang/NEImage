@@ -13,6 +13,14 @@ static NSMutableDictionary<NSNumber *,NSValue *> *imageSizeStore;
 
 @implementation NEWebImageManager
 
++ (nonnull instancetype)sharedManager {
+    static dispatch_once_t once;
+    static id instance;
+    dispatch_once(&once, ^{
+        instance = [self new];
+    });
+    return instance;
+}
 + (void)initialize{
     if (imageSizeStore == nil) {
 
