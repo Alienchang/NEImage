@@ -15,6 +15,7 @@
 static char FORMATED_URL;
 
 @implementation UIView (NEWebImage)
+
 - (void)setSizeFormatedURL:(NSString *)formatedURL {
     objc_setAssociatedObject(self, &FORMATED_URL, formatedURL, OBJC_ASSOCIATION_COPY);
 }

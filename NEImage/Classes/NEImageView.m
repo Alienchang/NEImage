@@ -18,14 +18,6 @@
 @end
 
 @implementation NEImageView
-- (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self){
-        [self setAnimationRepeatCount:1];
-    }
-    return self;
-}
-
 - (void)ne_setImageWithURL:(NSString *_Nullable)url
                placeholder:(UIImage *_Nullable)placeholder
                     circle:(BOOL)circle {
