@@ -147,7 +147,7 @@ NSString *const kImageExtType = @"imageExtType";
 }
 
 + (UIImage *)ne_animatedGIFData:(NSData *)data {
-    return [UIImage sd_imageWithData:data];
+    return [UIImage sd_animatedGIFWithData:data];
 }
 + (UIImage *)ne_animatedAPNGData:(NSData *)data {
     return [UIImage apng_animatedImageWithAPNGData:data];
